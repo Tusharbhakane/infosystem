@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.student.management.controller.AddStudentController"
+      spacing="10"
+      style="-fx-background-color: #f0f0f0;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Add New Student" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane vgap="10" hgap="10">
+        <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Date of Birth:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dobPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Gender:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="genderComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Address:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Phone Number:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Email:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="emailField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel"/>
+        <Button text="Save" onAction="#handleSave" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox> 

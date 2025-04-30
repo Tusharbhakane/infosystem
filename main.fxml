@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.student.management.controller.MainController"
+      spacing="10"
+      style="-fx-background-color: #f0f0f0;">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Exit" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="Students">
+            <MenuItem text="Add Student" onAction="#handleAddStudent"/>
+            <MenuItem text="View Students" onAction="#handleViewStudents"/>
+        </Menu>
+        <Menu text="Courses">
+            <MenuItem text="Add Course" onAction="#handleAddCourse"/>
+            <MenuItem text="View Courses" onAction="#handleViewCourses"/>
+        </Menu>
+        <Menu text="Reports">
+            <MenuItem text="Attendance Report" onAction="#handleAttendanceReport"/>
+            <MenuItem text="Grade Report" onAction="#handleGradeReport"/>
+        </Menu>
+    </MenuBar>
+
+    <TabPane VBox.vgrow="ALWAYS">
+        <Tab text="Dashboard">
+            <VBox spacing="10">
+                <Label text="Welcome to Student Management System" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <HBox spacing="20">
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+                        <Label text="Total Students" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="totalStudentsLabel" text="0" style="-fx-font-size: 24px;"/>
+                    </VBox>
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+                        <Label text="Total Courses" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="totalCoursesLabel" text="0" style="-fx-font-size: 24px;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </Tab>
+        <Tab text="Students">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Add New Student" onAction="#handleAddStudent"/>
+                </HBox>
+                <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="ID" fx:id="studentIdColumn"/>
+                        <TableColumn text="Name" fx:id="studentNameColumn"/>
+                        <TableColumn text="Email" fx:id="studentEmailColumn"/>
+                        <TableColumn text="Phone" fx:id="studentPhoneColumn"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+        <Tab text="Courses">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Add New Course" onAction="#handleAddCourse"/>
+                </HBox>
+                <TableView fx:id="coursesTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="ID" fx:id="courseIdColumn"/>
+                        <TableColumn text="Name" fx:id="courseNameColumn"/>
+                        <TableColumn text="Code" fx:id="courseCodeColumn"/>
+                        <TableColumn text="Credits" fx:id="courseCreditsColumn"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+</VBox> 

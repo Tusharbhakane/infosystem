@@ -104,6 +104,11 @@ public class MainController {
     }
 
     @FXML
+    private void handleViewStudents() {
+        // This method is already handled by the Students tab
+    }
+
+    @FXML
     private void handleAddCourse() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/add_course.fxml"));
@@ -118,12 +123,35 @@ public class MainController {
     }
 
     @FXML
+    private void handleViewCourses() {
+        // This method is already handled by the Courses tab
+    }
+
+    @FXML
+    private void handleAttendanceReport() {
+        showInfo("Coming Soon", "Attendance report feature is coming soon!");
+    }
+
+    @FXML
+    private void handleGradeReport() {
+        showInfo("Coming Soon", "Grade report feature is coming soon!");
+    }
+
+    @FXML
     private void handleExit() {
         System.exit(0);
     }
 
     private void showError(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showInfo(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
